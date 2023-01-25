@@ -30,7 +30,7 @@ public class DeletePastryServlet extends HttpServlet {
 
             if(pastry.isPresent()){
                 dao.delete(pastry.get());
-                resp.sendRedirect(req.getContextPath() + "/games");
+                resp.sendRedirect(req.getContextPath() + "/pastry-list");
             } else {
                 //pastry not found
             }

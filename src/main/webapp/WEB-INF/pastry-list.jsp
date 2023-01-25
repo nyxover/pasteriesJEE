@@ -8,6 +8,21 @@
 
 </head>
 <body>
+<form action="${pageContext.request.contextPath}/pastry-list/search" method="GET">
+    <input type="text" name="searchTerm" placeholder="Search for pastries">
+    <input type="submit" value="Search">
+</form>
+
+<!--  search bar  -->
+<div id = "searchblock">
+    <form action = "search" method = "POST">
+        <input class ="searchbar" placeholder="Search by name" name = "name">
+        <input type = "submit" class = "submitbutton" id = "searchbutton" value = "Enter">
+    </form>
+    <a id = "showallPastrytext" href="pastry-list">
+        Show All Pastries
+    </a>
+</div>
 
 
     <a class="btn btn-primary" href="${pageContext.request.contextPath}/pastry-list/add">+</a>

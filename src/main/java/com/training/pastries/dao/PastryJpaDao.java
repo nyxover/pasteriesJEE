@@ -103,4 +103,27 @@ public class PastryJpaDao implements PastryDao {
         }
 
     }
+
+
+    @Override
+    public List<Pastry> searchPastries(String searchTerm) {
+        List<Pastry> matchingPastries = new ArrayList<>();
+        EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
+        try {
+            TypedQuery<Pastry> query = em.createQuery("SELECT p FROM Pastry p WHERE p.name LIKE :searchTerm", Pastry.class);
+            query.setParameter("searchTerm", "%" + searchTerm + "%");
+            matchingPastries = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return matchingPastries;
+    }
+
+    @Override
+    public List<Pastry> findByName(String searchName) {
+        return null;
+    }
 }
+
