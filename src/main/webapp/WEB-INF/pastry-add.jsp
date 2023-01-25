@@ -15,22 +15,22 @@
 <div class="container">
 
   <div class="row text-center">
-    <h1 class="h3 mb-3 font-weight-normal">Add Game</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Add Pastry</h1>
   </div>
 
   <div class="row">
     <div class="col-8 offset-2 mt-3">
       <div class="card">
         <div class="card-body text-dark">
-          <form action="${pageContext.request.contextPath}/games/add" method="post">
+          <form action="${pageContext.request.contextPath}/pastry-list/add" method="post">
             <div class="mb-3">
-              <label for="gameName">Name</label>
-              <input id="gameName" type="text" name="gameName" class="form-control">
+              <label for="pastryName">Name</label>
+              <input id="pastryName" type="text" name="pastryName" class="form-control">
             </div>
 
             <div class="mb-3">
-              <label for="gameDescription">Description</label>
-              <textarea id="gameDescription" type="text" name="gameDescription"
+              <label for="pastryDescription">Description</label>
+              <textarea id="pastryDescription" type="text" name="pastryDescription"
                         class="form-control"></textarea>
             </div>
 

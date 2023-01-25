@@ -1,0 +1,29 @@
+:root {
+    --primary: #00274a;
+    --shadow: #fffff;
+    --primary-dark: #001c38;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+}
+
+.button-group button {
+    width: 100px;
+    height: 50px;
+}
+
+.button-group a {
+    width: 100px;
+    height: 50px;
+}
+
+.btn-size {
+    display: inline-block;
+    text-decoration: none;
+    width: 100px;
+    padding:5px;
+    border:1px solid #000;
+    border-radius: 5px;
+}

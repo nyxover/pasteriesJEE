@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "pastry-list/add")
+@WebServlet(urlPatterns = "/pastry-list/add")
 public class PastryAddServlet extends HttpServlet {
 
     @Override
@@ -22,7 +22,7 @@ public class PastryAddServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
     String name = request.getParameter("pastryName");
-    String description = request.getParameter("gameDescription");
+    String description = request.getParameter("pastryDescription");
 
         Pastry pastry = new Pastry(name, description);
         Dao<Pastry> pastryDao = DaoFactory.getPastryDao();
