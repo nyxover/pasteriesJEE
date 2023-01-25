@@ -10,6 +10,24 @@ public class Pastry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String name;
+
+    private String description;
+
+    private String img;
+    public Pastry() {
+    }
+
+    public Pastry(Long id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
+    public Pastry(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 
     public long getId() {
         return id;
@@ -43,13 +61,6 @@ public class Pastry {
         this.img = img;
     }
 
-    private String name;
 
-    private String description;
-
-    private String img;
-
-    public Pastry() {
-    }
 }
 
