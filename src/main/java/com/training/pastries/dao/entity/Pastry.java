@@ -35,11 +35,21 @@ public class Pastry {
         this.description = description;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     private String name;
 
     private String description;
 
+    private String img;
+
     public Pastry() {
     }
-
 }
+

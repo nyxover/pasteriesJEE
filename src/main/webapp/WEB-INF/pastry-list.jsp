@@ -13,7 +13,7 @@
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="https://1.bp.blogspot.com/-9c897R1n2v4/U30Kv9YGbvI/AAAAAAAAEPU/Y3ZGfm62Nps/s1600/merveilleux-sp%C3%A9culoos.jpg" class="img-fluid rounded-start" alt="...">
+            <img src="https://sauvageboris.fr/training/api/pastries/images/${pastry.img}" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">
@@ -21,6 +21,13 @@
                 <p>${pastry.id}</p>
                 <p class="card-text">${pastry.description}</p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <a class="btn btn-primary"
+                   href="${pageContext.request.contextPath}/pastries/edit?id=${pastry.id}">Edit</a>
+                <form method="post" action="${pageContext.request.contextPath}/pastries/delete">
+                    <input type="hidden" value="${pastry.id}" name="idPastry">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+
             </div>
         </div>
     </div>
