@@ -3,11 +3,15 @@ package com.training.pastries;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class JPAUtil {
+public final class JPAUtil {
     private static final String PERSISTENCE_UNIT_NAME = "pu";
     private static EntityManagerFactory factory;
 
-    public static EntityManagerFactory getEntityManagerFactory() {
+    private JPAUtil(){
+
+    }
+
+    public final static EntityManagerFactory getEntityManagerFactory() {
         if (factory == null) {
             factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         }

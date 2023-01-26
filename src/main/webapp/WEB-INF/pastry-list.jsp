@@ -8,8 +8,8 @@
 
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/pastry-list/search" method="GET">
-    <input type="text" name="searchTerm" placeholder="Search for pastries">
+<form action="${pageContext.request.contextPath}/search" method="GET">
+    <input type="text" name="name" placeholder="Search for pastries">
     <input type="submit" value="Search">
 </form>
 
