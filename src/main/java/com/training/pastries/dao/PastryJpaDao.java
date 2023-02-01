@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class PastryJpaDao implements PastryDao {
     @Override
-    public void save(Pastry pastry) {
+    public Pastry save(Pastry pastry) {
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
         EntityTransaction et = em.getTransaction();
         et.begin();
@@ -26,8 +26,11 @@ public class PastryJpaDao implements PastryDao {
         } finally {
             em.close();
         }
-
+    return pastry;
     }
+
+
+
     @Override
     public Optional<Pastry> get(Long id) {
         Optional<Pastry> result = Optional.empty();
@@ -69,7 +72,7 @@ public class PastryJpaDao implements PastryDao {
 
 
     @Override
-    public void update(Pastry pastry) {
+    public Pastry update(Pastry pastry) {
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
         EntityTransaction et = em.getTransaction();
         et.begin();
@@ -83,11 +86,12 @@ public class PastryJpaDao implements PastryDao {
         } finally {
             em.close();
         }
-
+            return pastry;
     }
 
+
     @Override
-    public void delete(Pastry pastry) {
+    public boolean delete(Pastry pastry) {
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
         EntityTransaction et = em.getTransaction();
         et.begin();
@@ -102,7 +106,9 @@ public class PastryJpaDao implements PastryDao {
             em.close();
         }
 
+        return false;
     }
+
 
 
     @Override

@@ -18,10 +18,11 @@ public class Pastry {
     public Pastry() {
     }
 
-    public Pastry(Long id, String name, String description) {
+    public Pastry(Long id, String name, String description, String img) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.img = img;
     }
 
     public Pastry(String name, String description) {

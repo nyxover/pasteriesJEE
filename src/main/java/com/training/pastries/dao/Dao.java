@@ -1,16 +1,25 @@
 package com.training.pastries.dao;
 
+import com.training.pastries.dao.entity.Pastry;
+
 import java.util.List;
 import java.util.Optional;
 
 public interface Dao <T>{
+
     Optional<T> get(Long id);
 
     List<T> getAll();
 
-    void save(T t);
+    T save(T t);
 
-    void update(T t);
+    Pastry update(T t);
 
-    void delete(T t);
+    boolean delete(T t);
+
+
+    List<Pastry> findByName(String searchName);
+
+    List<Pastry> searchPastries(String searchTerm);
+
 }
